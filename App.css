@@ -1,0 +1,40 @@
+.App {
+  position: relative;
+  text-align: center;
+  min-height: 100vh;
+  color: #e6e6e6;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(168, 85, 247, 0.2), transparent 24%),
+    radial-gradient(circle at 82% 12%, rgba(255, 255, 255, 0.08), transparent 18%),
+    radial-gradient(circle at 80% 74%, rgba(99, 102, 241, 0.12), transparent 22%),
+    linear-gradient(180deg, #06040d 0%, #080611 46%, #040509 100%);
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+.App::before,
+.App::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.34;
+  z-index: 0;
+}
+
+.App::before {
+  background: linear-gradient(115deg, transparent 8%, rgba(255, 255, 255, 0.05) 48%, transparent 92%);
+}
+
+.App::after {
+  background:
+    radial-gradient(circle at 24% 74%, rgba(168, 85, 247, 0.12), transparent 20%),
+    radial-gradient(circle at 82% 70%, rgba(255, 255, 255, 0.05), transparent 14%);
+}
+
+@media (max-width: 860px) {
+  .App::before,
+  .App::after {
+    opacity: 0.22;
+  }
+}
